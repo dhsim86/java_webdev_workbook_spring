@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="car1" class="exam.test09.Car">
+        <constructor-arg value="Avante" />
+        <constructor-arg>
+            <bean class="exam.test09.Engine">
+                <property name="maker" value="Hyundai" />
+                <property name="cc" value="1495" />
+            </bean>
+        </constructor-arg>
+        <property name="tires">
+            <list>
+                <bean class="exam.test09.Tire">
+                    <property name="maker" value="Kumho" />
+                    <property name="spec" value="P185/65R14" />
+                </bean>
+                <bean class="exam.test09.Tire">
+                    <property name="maker" value="Kumho" />
+                    <property name="spec" value="P185/65R14" />
+                </bean>
+                <bean class="exam.test09.Tire">
+                    <property name="maker" value="Hankook" />
+                    <property name="spec" value="P205/65R14" />
+                </bean>
+                <bean class="exam.test09.Tire">
+                    <property name="maker" value="Hankook" />
+                    <property name="spec" value="P205/65R14" />
+                </bean>
+            </list>
+        </property>
+    </bean>
+</beans>
