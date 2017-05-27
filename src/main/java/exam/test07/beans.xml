@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="engine1" class="exam.test07.Engine">
+        <constructor-arg>
+            <value>Hyundai</value>
+        </constructor-arg>
+        <property name="cc">
+            <value>1998</value>
+        </property>
+    </bean>
+
+    <bean id="car1" class="exam.test07.Car">
+        <property name="model">
+            <value>Avante</value>
+        </property>
+        <property name="engine">
+            <ref bean="engine1" />
+        </property>
+    </bean>
+
+    <bean id="car2" class="exam.test07.Car">
+        <property name="model" value="Sonata" />
+        <property name="engine" ref="engine1" />
+    </bean>
+
+    <bean id="car3" class="exam.test07.Car">
+        <property name="model" value="Grandeur" />
+        <property name="engine" ref="engine1" />
+    </bean>
+
+    <bean id="car4" class="exam.test07.Car">
+        <property name="model" value="Equus" />
+        <property name="engine" ref="engine1" />
+    </bean>
+</beans>
